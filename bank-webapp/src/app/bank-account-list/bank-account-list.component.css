@@ -1,0 +1,152 @@
+ @media only screen and (min-width: 1200px) {
+
+  }
+    .row{
+      margin-right: -60px;
+  }
+
+  .container{
+    margin-bottom: 30rem;
+    margin-left: 10rem;
+  }
+
+
+  .card-header{
+      margin-left: 20px;
+      font-size: 1.6em;
+  }
+
+
+  .fa-plus{
+      color:lightgray;
+      margin-left: 120px;
+      margin-right: 120px;
+      margin-top: 70px;
+  }
+
+
+
+  .add-bankaccount{
+      margin-left: 65px;
+      margin-top: 20px;
+      color: rgb(51, 51, 51);
+      font-weight: 610;
+      text-decoration: none;
+
+  }
+
+
+  ul li{
+      list-style-type: none;
+      font-size: 0.9em;
+
+  }
+  ul li .address-list-item{
+      font-weight: 500;
+
+  }
+
+  .card{
+      border: 1px solid darkgray;
+      height: 300px;
+      width: 330px;
+
+      margin-right: 10px;
+      margin-left: 5px;
+
+  }
+
+  .card-list{
+      margin-left: 20px;
+  }
+  .fa-card{
+      border: 2px dashed darkgray;
+      margin-left: 20px;
+      margin-right: 5px;
+
+  }
+
+
+  ul li a{
+
+      text-decoration: none;
+      color: blue;
+      font-weight: 550;
+      font-size: .9em;
+  }
+
+  .list-actions{
+      margin-top: 65px;
+  }
+  .remove-address{
+      margin-left: 2px;
+      text-decoration: none;
+      color: blue;
+      font-weight: 500;
+  }
+
+  .separating-bar{
+      margin: 5px;
+      font-weight: 700;
+  }
+
+  a:hover{
+      text-decoration: none;
+  }
+
+
+    @media only screen and (max-width: 768px) {
+        .row{
+            margin-left: -50px;
+        }
+        .card{
+            width: 20rem;
+        }
+        .card-header{
+          margin-left: -15px;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+
+      .card-header{
+          margin-left: 23px;
+          font-size: 1.5em;
+      }
+
+
+      .card{
+          width: 15rem;
+          height: 13rem;
+      }
+
+      .list-actions{
+          margin-top: -80px;
+      }
+
+      .main-layout{
+       margin-left: 55px;
+      }
+
+  .card-header{
+      margin-left: 23px;
+      font-size: 1.5em;
+  }
+
+  .fa-plus{
+      color:lightgray;
+      margin-left: 90px;
+      margin-right: 120px;
+      margin-top: 50px;
+
+  }
+
+  .add-bankaccount{
+      margin-left: 20px;
+      margin-top: 20px;
+      color: rgb(51, 51, 51);
+      font-weight: 610;
+      font-size:1.5em ;
+
+  }
+    }
