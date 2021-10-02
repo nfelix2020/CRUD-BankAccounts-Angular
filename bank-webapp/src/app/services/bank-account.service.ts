@@ -17,4 +17,19 @@ export class BankAccountService {
       response as BankAccount[]
       );
   }
+
+  //Creating a Bank account
+
+
+  //Edit  bank account
+
+
+  //Removing a Bank account
+
+    public deleteBankAccount(id:number){
+      return this.http.delete(`${environment.urlBackEnd}/bankaccounts/${id}`, {withCredentials:true})
+    }
+
+
+
 }

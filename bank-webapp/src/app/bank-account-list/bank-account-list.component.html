@@ -47,7 +47,7 @@
                                                 <li class="px-3 list-actions">
                                                   <a routerLink=" " > Edit</a>
                                                   <span class="separating-bar">|</span>
-                                                  <a routerLink="" class="remove-address"  >Remove</a>
+                                                  <a routerLink="/bank-account-list" class="remove-address" (click)="open(mymodal)" >Remove</a>
 
                                                 </li>
 
@@ -56,7 +56,7 @@
 
                                       </div>
                                       <!-- Popup -->
-                                      <!-- <ng-template #mymodal let-modal>
+                                      <ng-template #mymodal let-modal>
                                           <div class="modal-header">
                                           <h4 class="modal-title" id="modal-basic-title">Please confirm</h4>
                                           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -68,10 +68,10 @@
                                           </div>
                                           <div class="modal-footer">
                                           <button type="button" class="btn btn-outline-dark btn-cancel"  (click)="modal.dismiss('Cross click')"  >Cancel</button>
-                                          <button type="button" class="btn btn-outline-dark btn-confirm"   (click)="deleteAddress(address.id)"  (click)="modal.close('Save click')"  >Ok</button>
+                                          <button type="button" class="btn btn-outline-dark btn-confirm"    (click)="removeBankAccount(bankaccount.id)" (click)="modal.close('Save click')"  >Ok</button>
 
                                           </div>
-                                      </ng-template> -->
+                                      </ng-template>
                                   </div>
 
                               </div>

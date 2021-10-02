@@ -9,6 +9,7 @@ import { BankAccountListComponent } from './bank-account-list/bank-account-list.
 import { BankAccountDetailsComponent } from './bank-account-details/bank-account-details.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
