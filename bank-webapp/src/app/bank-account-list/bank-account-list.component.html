@@ -45,10 +45,9 @@
                                                 <li class="px-3 mb-2 "><span class="address-list-item">
                                                           Total Amount (€):{{bankaccount.totalAmount}}</span></li>
                                                 <li class="px-3 list-actions">
-                                                  <a routerLink=" " > Edit</a>
+                                                  <a routerLink="/bank-account/edit/{{bankaccount.id}} " > Edit</a>
                                                   <span class="separating-bar">|</span>
                                                   <a routerLink="/bank-account-list" class="remove-address" (click)="open(mymodal)" >Remove</a>
-
                                                 </li>
 
                                           </ul>

@@ -10,6 +10,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { EditBankAccountComponent } from './edit-bank-account/edit-bank-account.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     CreateBankAccountComponent,
     BankAccountListComponent,
     BankAccountDetailsComponent,
+    EditBankAccountComponent,
 
   ],
   imports: [

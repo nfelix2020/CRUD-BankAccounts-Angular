@@ -18,21 +18,25 @@ export class BankAccountService {
       );
   }
 
+  //get bank account by Id
+  public getBankAccountById(id:number){
+    return this.http.get(`${environment.urlBackEnd}/bankaccounts/${id}`, {withCredentials:true})
+  }
+
   //Creating a Bank account
 
-  createNewBankAccount(bankAccount){
+  createNewBankAccount(bankAccount: BankAccount){
     return this.http.post(`${environment.urlBackEnd}/bankaccounts`, bankAccount, {withCredentials:true})
   }
 
   //Edit  bank account
-
+  public EditBankAccount(bankAccount: BankAccount){
+    return this.http.put(`${environment.urlBackEnd}/bankaccounts/${bankAccount.id}`, bankAccount, {withCredentials:true})
+  }
 
   //Removing a Bank account
 
     public deleteBankAccount(id:number){
       return this.http.delete(`${environment.urlBackEnd}/bankaccounts/${id}`, {withCredentials:true})
     }
-
-
-
 }
