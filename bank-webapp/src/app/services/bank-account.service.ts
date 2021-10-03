@@ -20,6 +20,9 @@ export class BankAccountService {
 
   //Creating a Bank account
 
+  createNewBankAccount(bankAccount){
+    return this.http.post(`${environment.urlBackEnd}/bankaccounts`, bankAccount, {withCredentials:true})
+  }
 
   //Edit  bank account
 

@@ -1,0 +1,157 @@
+/* @media only screen and (min-width: 1200px) {
+
+  form{
+    margin-top: -100px;
+    }
+
+    .margin-topner{
+      margin-bottom: 300px;
+    }
+
+    .container{
+      margin-top: 120px;
+    }
+
+    label{
+        margin-bottom: 5px;
+        color: black;
+    }
+
+
+    .star{
+      color: red;
+      font-size: .7em;
+      margin-left: 2px;
+    }
+
+    .mandatory-fields{
+      font-style:italic;
+    }
+
+    button{
+      background-color: black;
+      color: #ffffff;
+      border: none;
+    }
+
+    select{
+      width: 350px;
+      margin-left: 2px;
+    }
+
+    ::placeholder{
+
+      font-size: 0.9em;
+      font-style: italic;
+    }
+
+
+    }
+
+
+    @media only screen and (max-width: 600px) {
+
+      .star{
+        color: red;
+        font-size: .7em;
+        margin-left: 2px;
+      }
+
+      .mandatory-fields{
+        font-style:italic;
+      }
+
+      ::placeholder{
+
+        font-size: 0.7em;
+        font-style: italic;
+      }
+
+      .btn{
+
+        margin-bottom: 100px;
+        margin-top: 5px;
+        margin-left: -20px;
+        background-color: black;
+        color: white;
+      }
+
+      label{
+        margin-left: -20px;
+        color: black;
+      }
+      .form-control{
+        width: 14rem;
+
+      }
+
+      select{
+        width: 350px;
+        margin-left: -19px;
+      }
+
+      input{
+        margin-left: -20px;
+      }
+      .mb-3 , .mandatory-fields{
+        margin-left: -20px;
+      }
+
+    }
+
+    @media only screen and (min-width: 768px) {
+
+      .star{
+        color: red;
+        font-size: .7em;
+        margin-left: 2px;
+      }
+
+      .mandatory-fields{
+        font-style:italic;
+      }
+
+
+      ::placeholder{
+
+        font-size: 0.8em;
+        font-style: italic;
+      }
+
+
+
+      label{
+        margin-left: -120px;
+        color: black;
+      }
+      .form-control{
+        width: 30rem;
+        margin-left: -120px;
+
+      }
+
+      select{
+        width: 350px;
+        margin-left: -19px;
+      }
+
+      .mb-3 , .mandatory-fields{
+        margin-left: -120px;
+      }
+    }
+
+ */
+
+ .btn{
+
+  margin-bottom: 100px;
+  margin-top: 15px;
+  /* margin-left: 20px; */
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+.alert{
+  color: red;
+}

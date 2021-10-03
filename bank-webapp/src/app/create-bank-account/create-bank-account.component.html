@@ -1,0 +1,64 @@
+<div class="container mt-3">
+  <h2 > Add a Bank Account </h2>
+
+  <form (ngSubmit)="onSave(f)" #f="ngForm" >
+
+    <div class="form-group">
+      <label for="">Nom et Prénom</label>
+      <input type="text" id="nom" class="form-control"  name="ownerFullName"  [(ngModel)]="bankAccount.ownerFullName"  required minlength="4" #name="ngModel" >
+    </div>
+    <!-- validating form -->
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+    class="alert">
+      <div *ngIf="name.errors?.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors?.minlength">
+        Name must be at least 4 characters long.
+      </div>
+    </div>
+    <!-- validating form -->
+
+    <div class="form-group" >
+      <label for="">Email</label>
+      <input type="text" class="form-control"  name="ownerEmail"  [(ngModel)]="bankAccount.ownerEmail" required #ownerEmail="ngModel">
+    </div>
+
+    <!-- validating form -->
+    <div *ngIf="ownerEmail.invalid && (ownerEmail.dirty || ownerEmail.touched)"
+    class="alert">
+      <div *ngIf="ownerEmail.errors?.required">
+        Email is required.
+      </div>
+    </div>
+    <!-- validating form -->
+
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="text" class="form-control"  name="ownerPhone" [(ngModel)]="bankAccount.ownerPhone" required>
+    </div>
+    <div class="form-group">
+      <label for="">Bank Account Number</label>
+      <input type="number" class="form-control"  name="accountNumber" [(ngModel)]="bankAccount.accountNumber" required>
+    </div>
+    <div class="form-group">
+      <label for="">Bank Name</label>
+      <input type="text" class="form-control"  name="bankName"  [(ngModel)]="bankAccount.bankName" required >
+    </div>
+    <div class="form-group">
+      <label for="">Country</label>
+      <input type="text" class="form-control"  name="country" bankAccount [(ngModel)]="bankAccount.country" required >
+    </div>
+    <div class="form-group">
+      <label for="">Zip Code</label>
+      <input type="number" class="form-control"  name="zip" [(ngModel)]="bankAccount.zipCode" required>
+    </div>
+    <div class="form-group">
+      <label for="">Total Amount</label>
+      <input type="number" class="form-control"  name="totalAmount" [(ngModel)]="bankAccount.totalAmount" required   >
+    </div>
+    <div class="form-group">
+     <button class="btn btn-primary" type="submit">Enregistrer</button>
+    </div>
+  </form>
+</div>
