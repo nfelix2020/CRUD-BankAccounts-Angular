@@ -2,7 +2,7 @@ export class BankAccount {
   id:number;
   ownerFullName: string;
   ownerEmail: string;
-  ownerPhone:number;
+  ownerPhone:string;
   accountNumber: number;
   bankName: string;
   zipCode: number;

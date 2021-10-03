@@ -31,19 +31,19 @@
                                               <li class="px-3 mt-2"> <b>{{bankaccount.ownerFullName}}</b></li>
                                               <li class="px-3"> <span class="address-list-item">{{bankaccount.ownerEmail}}
                                                   </span></li>
-                                              <li class="px-3"> <span class="address-list-item">{{bankaccount.ownerPhone}}
+                                              <li class="px-3"> <span class="address-list-item"> {{bankaccount.ownerPhone}}
                                                   </span></li>
 
                                               <li class="px-3 "><span
-                                                      class="address-list-item">{{bankaccount.accountNumber}}</span></li>
+                                                      class="address-list-item"> <strong>Account Number :</strong>   {{bankaccount.accountNumber}}</span></li>
                                               <li class="px-3 "><span
-                                                      class="address-list-item">{{bankaccount.bankName}}</span></li>
+                                                      class="address-list-item"><strong> Bank :</strong>{{bankaccount.bankName}}</span></li>
                                                <li class="px-3 mb-2"><span class="address-list-item">
                                                 Zip Code : {{bankaccount.zipCode}}</span></li>
                                                 <li class="px-3 mb-2"><span class="address-list-item">
                                                   {{bankaccount.country}}</span></li>
                                                 <li class="px-3 mb-2 "><span class="address-list-item">
-                                                          Total Amount (€):{{bankaccount.totalAmount}}</span></li>
+                                                          Total Amount (€): {{bankaccount.totalAmount}}</span></li>
                                                 <li class="px-3 list-actions">
                                                   <a routerLink="/bank-account/edit/{{bankaccount.id}} " > Edit</a>
                                                   <span class="separating-bar">|</span>
