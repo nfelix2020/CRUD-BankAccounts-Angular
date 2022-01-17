@@ -19,13 +19,12 @@ import { EditBankAccountComponent } from './edit-bank-account/edit-bank-account.
     BankAccountListComponent,
     BankAccountDetailsComponent,
     EditBankAccountComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     HttpClientModule,
     NgbModule
   ],

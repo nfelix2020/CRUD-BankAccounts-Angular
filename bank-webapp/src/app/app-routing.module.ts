@@ -7,7 +7,7 @@ import { EditBankAccountComponent } from './edit-bank-account/edit-bank-account.
 const routes: Routes = [
   {path:'', component: BankAccountListComponent},
   {path:"bank-account-list", component: BankAccountListComponent},
-  {path:"bank-account/add", component: CreateBankAccountComponent},
+  {path:"bank-account/new", component: CreateBankAccountComponent},
   {path:"bank-account/edit/:id", component: EditBankAccountComponent}
 
 ];

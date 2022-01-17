@@ -11,7 +11,7 @@ import { BankAccountService } from '../services/bank-account.service';
 })
 export class BankAccountListComponent implements OnInit {
 
-  bankAccountlist: BankAccount[]=[];
+  bankAccountlist: BankAccount[];
 
   closeResult: string;
 
@@ -24,24 +24,32 @@ export class BankAccountListComponent implements OnInit {
     this.showAllBankAccounts();
   }
 
-  showAllBankAccounts(){
-    this.bankAccountService.getAllBankAccounts()
-    .then((data: BankAccount[])=>{
-      this.bankAccountlist=data;
+  // showAllBankAccounts(){
+  //   this.bankAccountService.getAllBankAccounts()
+  //   .then((data: BankAccount[])=>{
+  //     this.bankAccountlist=data;
 
+  //   });
+  // }
+
+  showAllBankAccounts(){
+    this.bankAccountService.getAllBankAccounts().subscribe(data =>{
+      this.bankAccountlist=data;
     });
   }
 
   //Remove bank accountNumber
 
-  public removeBankAccount(bankAccountId: number){
-    this.bankAccountService.deleteBankAccount(bankAccountId).subscribe((bankAcc)=>{
+  public removeBankAccount(id: number){
+    this.bankAccountService.deleteBankAccount(id).subscribe((bankAcc)=>{
       console.log("Bank Account removed", bankAcc);
-      this.router.navigateByUrl('/bank-account-list')
+      this.goToBankAccountList();
     });
-    this.showAllBankAccounts();
+      this.showAllBankAccounts();
   }
-
+  goToBankAccountList(){
+    this.router.navigateByUrl('/bank-account-list')
+}
 
   //POP-UP
   open(content) {
@@ -49,10 +57,10 @@ export class BankAccountListComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
 
       this.closeResult = `Closed with: ${result}`;
-      this.router.navigateByUrl('/addresses');
+      this.router.navigateByUrl('/bank-account-list');
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-       this.router.navigateByUrl('/addresses');
+       this.router.navigateByUrl('/bank-account-list');
     });
 
   }

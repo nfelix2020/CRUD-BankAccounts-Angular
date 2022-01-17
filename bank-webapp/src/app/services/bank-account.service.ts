@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { $ } from 'protractor';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { BankAccount } from '../BankAccount';
 
@@ -8,35 +10,52 @@ import { BankAccount } from '../BankAccount';
 })
 export class BankAccountService {
 
+  private baseURL="http://localhost:8080/bankaccounts"
+
   constructor(private http: HttpClient) { }
 
-  getAllBankAccounts(): Promise<BankAccount[]> {
-    return this.http.get(`${environment.urlBackEnd}/bankaccounts`, {withCredentials:true})
-      .toPromise()
-      .then((response) =>
-      response as BankAccount[]
-      );
+  // getAllBankAccounts(): Promise<BankAccount[]> {
+  //   return this.http.get(`${environment.urlBackEnd}`, {withCredentials:true})
+  //     .toPromise()
+  //     .then((response) =>
+  //     response as BankAccount[]
+  //     );
+  // }
+
+  getAllBankAccounts(): Observable<BankAccount[]> {
+    return this.http.get<BankAccount[]>(`${this.baseURL}`);
   }
 
+
   //get bank account by Id
-  public getBankAccountById(id:number){
-    return this.http.get(`${environment.urlBackEnd}/bankaccounts/${id}`, {withCredentials:true})
+
+  public getBankAccountById(id:number) : Observable<BankAccount>{
+    return this.http.get<BankAccount>(`${this.baseURL}/${id}`);
   }
 
   //Creating a Bank account
 
-  createNewBankAccount(bankAccount: BankAccount){
-    return this.http.post(`${environment.urlBackEnd}/bankaccounts`, bankAccount, {withCredentials:true})
+  // createNewBankAccount(bankAccount: BankAccount){
+  //   return this.http.post(`${environment.urlBackEnd}/bankaccounts`, bankAccount, {withCredentials:true})
+  // }
+
+  createNewBankAccount(bankAccount: BankAccount): Observable<Object>{
+    return this.http.post(`${this.baseURL}`, bankAccount);
   }
 
-  //Edit  bank account
-  public EditBankAccount(bankAccount: BankAccount){
-    return this.http.put(`${environment.urlBackEnd}/bankaccounts/${bankAccount.id}`, bankAccount, {withCredentials:true})
+
+  // Edit  bank account
+  public EditBankAccount(id: number, bankAccount: BankAccount) : Observable<Object>{
+    return this.http.put<BankAccount>(`${this.baseURL}/${id}`, bankAccount);
   }
 
   //Removing a Bank account
 
-    public deleteBankAccount(id:number){
-      return this.http.delete(`${environment.urlBackEnd}/bankaccounts/${id}`, {withCredentials:true})
+    // public deleteBankAccount(id:number){
+    //   // return this.http.delete(`${environment.urlBackEnd}/bankaccounts/${id}`, {withCredentials:true})
+    // }
+
+    public deleteBankAccount(bankAccountId: number) : Observable<Object>{
+       return this.http.delete(`${this.baseURL}/${bankAccountId}`);
     }
 }
