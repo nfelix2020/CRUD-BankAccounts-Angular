@@ -26,28 +26,41 @@ export class CreateBankAccountComponent implements OnInit {
   onSave(form: NgForm){
     console.log(form.value);
 
-    this.bankAccount={
+  //   this.bankAccount={
 
-  id:form.value.id,
-  ownerFullName: form.value.ownerFullName,
-  ownerEmail: form.value.ownerEmail,
-  ownerPhone:form.value.ownerPhone,
-  accountNumber: form.value.accountNumber,
-  bankName: form.value.bankName,
-  zipCode: form.value.zipCode,
-  country: form.value.country,
-  totalAmount:form.value.totalAmount
+  // id:form.value.id,
+  // ownerFullName: form.value.ownerFullName,
+  // ownerEmail: form.value.ownerEmail,
+  // ownerPhone:form.value.ownerPhone,
+  // accountNumber: form.value.accountNumber,
+  // bankName: form.value.bankName,
+  // zipCode: form.value.zipCode,
+  // country: form.value.country,
+  // totalAmount:form.value.totalAmount
 
-    };
+  //   };
 
-    this.AddNewBankAccount(this.bankAccount);
-    this.router.navigateByUrl('/bank-account-list')
-  }
+  //   this.AddNewBankAccount(this.bankAccount);
+  //   this.router.navigateByUrl('/bank-account-list')
+  // }
 
-  AddNewBankAccount(bankAccount){
-    this.bankAccountService.createNewBankAccount(bankAccount).subscribe((data)=>{
-      console.log("Bank Account added", data)
-    })
+  // AddNewBankAccount(bankAccount){
+  //   this.bankAccountService.createNewBankAccount(bankAccount).subscribe((data)=>{
+  //     console.log("Bank Account added", data)
+  //   })
+
+  this.AddNewBankAccount();
+     }
+
+     AddNewBankAccount(){
+      this.bankAccountService.createNewBankAccount(this.bankAccount).subscribe(data=>{
+        console.log("Bank Account added", data);
+        this.goToBankAccountList();
+      });
+      }
+
+      goToBankAccountList(){
+        this.router.navigateByUrl('/bank-account-list')
     }
   }
 

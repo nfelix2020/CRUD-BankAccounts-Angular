@@ -12,6 +12,7 @@ import { BankAccountService } from '../services/bank-account.service';
 export class BankAccountListComponent implements OnInit {
 
   bankAccountlist: BankAccount[]=[];
+  bankAccountId: number;
 
   closeResult: string;
 
@@ -24,22 +25,27 @@ export class BankAccountListComponent implements OnInit {
     this.showAllBankAccounts();
   }
 
-  showAllBankAccounts(){
-    this.bankAccountService.getAllBankAccounts()
-    .then((data: BankAccount[])=>{
-      this.bankAccountlist=data;
+  // showAllBankAccounts(){
+  //   this.bankAccountService.getAllBankAccounts()
+  //   .then((data: BankAccount[])=>{
+  //     this.bankAccountlist=data;
 
-    });
-  }
+  //   });
+  // }
 
   //Remove bank accountNumber
 
+  showAllBankAccounts(){
+    this.bankAccountService.getAllBankAccounts().subscribe(data =>{
+      this.bankAccountlist=data;
+    })
+  }
+
   public removeBankAccount(bankAccountId: number){
-    this.bankAccountService.deleteBankAccount(bankAccountId).subscribe((bankAcc)=>{
-      console.log("Bank Account removed", bankAcc);
-      this.router.navigateByUrl('/bank-account-list')
+    this.bankAccountService.deleteBankAccount(bankAccountId).subscribe(data=>{
+      console.log("Bank Account removed", data);
+      this.showAllBankAccounts();
     });
-    this.showAllBankAccounts();
   }
 
 
@@ -49,10 +55,10 @@ export class BankAccountListComponent implements OnInit {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
 
       this.closeResult = `Closed with: ${result}`;
-      this.router.navigateByUrl('/addresses');
+      this.router.navigateByUrl('/bank-account-list');
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-       this.router.navigateByUrl('/addresses');
+       this.router.navigateByUrl('/bank-account-list');
     });
 
   }
